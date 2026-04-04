@@ -1,0 +1,69 @@
+let images = [];
+let grid = [];
+let numCols = 23;
+let numRows = 23;
+let cellSize;
+
+function preload() {
+  for (let i = 0; i < 5; i++) {
+    images[i] = loadImage(`${i}.png`);
+  }
+}
+
+function setup() {
+  createCanvas(800, 800);
+  cellSize = width / numCols;
+  noStroke();
+
+  for (let i = 0; i < numCols; i++) {
+    grid[i] = [];
+    for (let j = 0; j < numRows; j++) {
+      grid[i][j] = floor(random(5));
+    }
+  }
+}
+
+function draw() {
+  background(0);
+  
+  if (images.length === 5) {
+    for (let i = 0; i < numCols; i++) {
+      for (let j = 0; j < numRows; j++) {
+        let imgIndex = grid[i][j];
+        let x = floor(i * cellSize);
+        let y = floor(j * cellSize);
+        let s = floor(cellSize);
+        
+        if (images[imgIndex]) {
+          copy(images[imgIndex], x, y, s, s, x, y, s, s);
+        }
+      }
+    }
+  } else {
+    fill(255);
+    textAlign(CENTER, CENTER);
+    text("Loading Archive...", width / 2, height / 2);
+  }
+}
+
+function mousePressed() {
+  let col = floor(mouseX / cellSize);
+  let row = floor(mouseY / cellSize);
+  if (col >= 0 && col < numCols && row >= 0 && row < numRows) {
+    grid[col][row] = (grid[col][row] + 1) % images.length;
+  }
+}
+
+function keyPressed() {
+  if (key === "r" || key === "R") {
+    for (let i = 0; i < numCols; i++) {
+      for (let j = 0; j < numRows; j++) {
+        grid[i][j] = floor(random(5));
+      }
+    }
+  }
+
+  if (key === "s" || key === "S") {
+    saveCanvas("amalgam_study", "png");
+  }
+}

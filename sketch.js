@@ -5,8 +5,7 @@ let numRows = 23;
 let cellSize;
 
 function preload() {
-  for (let i = 0; i < 5; i++) {
-    // Ensure your images are named 0.png, 1.png, etc. in the same folder
+  for (let i = 0; i < 5; i++) 
     images[i] = loadImage(`${i}.png`);
   }
 }
@@ -17,7 +16,7 @@ function setup() {
   // Calculate cellSize once
   cellSize = width / numCols;
   
-  // CRITICAL: Initialize the grid here
+  // Grid
   for (let i = 0; i < numCols; i++) {
     grid[i] = [];
     for (let j = 0; j < numRows; j++) {
@@ -29,15 +28,15 @@ function setup() {
 }
 
 function draw() {
-  background(255); // Your white grid lines
+  background(255); // white grid lines
   
-  // Only draw if images are actually loaded
+  // draw if images are loaded
   if (images.length === 5) {
     for (let i = 0; i < numCols; i++) {
       for (let j = 0; j < numRows; j++) {
         let imgIndex = grid[i][j];
         
-        // Safety check for the image index
+        // check for the image index
         if (images[imgIndex]) {
           let x = floor(i * cellSize);
           let y = floor(j * cellSize);
@@ -45,8 +44,8 @@ function draw() {
           
           copy(
             images[imgIndex],
-            x, y, s, s,    // Source (from the original photo)
-            x, y, s, s     // Destination (on the 800x800 canvas)
+            x, y, s, s,    // source 
+            x, y, s, s     // destination 
           );
         }
       }

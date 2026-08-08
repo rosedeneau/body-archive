@@ -8,7 +8,6 @@ function preload() {
   for (let i = 0; i < 5; i++) 
     images[i] = loadImage(`${i}.png`);
   }
-}
 
 function setup() {
   createCanvas(800, 800);

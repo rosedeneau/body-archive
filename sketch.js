@@ -13,10 +13,10 @@ function preload() {
 function setup() {
   createCanvas(800, 800);
   
-  // Calculate cellSize once
+  // calculate cellSize once
   cellSize = width / numCols;
   
-  // Grid
+  // grid
   for (let i = 0; i < numCols; i++) {
     grid[i] = [];
     for (let j = 0; j < numRows; j++) {
@@ -44,8 +44,8 @@ function draw() {
           
           copy(
             images[imgIndex],
-            x, y, s, s,    // source 
-            x, y, s, s     // destination 
+            x, y, s, s,    
+            x, y, s, s     
           );
         }
       }

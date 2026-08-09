@@ -22,10 +22,12 @@ function setup() {
     }
   }
   noStroke();
+
+  input = createFileInput(handleImage);
+  input.position(50, 900);
 }
 
-input = createFileInput(handleImage);
-  input.position(50, 900);
+
 
 function draw() {
   background(255);

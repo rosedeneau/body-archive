@@ -4,7 +4,6 @@ let numCols = 23;
 let numRows = 23;
 let cellSize;
 let input;
-let img;
 
 function preload() {
   for (let i = 0; i < 5; i++) {
@@ -78,8 +77,7 @@ function keyPressed() {
 // image handler
 function handleImage(file) {
   if (file.type === 'image') {
-    img = createImg(file.data, '');
-    img.hide();
+    images[0] = loadImage(file.data);
   } else {
     img = null;
   }

@@ -31,6 +31,11 @@ input = createFileInput(handleImage);
 
 function draw() {
   background(255); // white grid lines
+
+    if (img) {
+    image(img, 0, 0, width, height);
+  }
+}
   
   // draw if images are loaded
   if (images.length === 5) {

@@ -3,6 +3,8 @@ let grid = [];
 let numCols = 23; 
 let numRows = 23;
 let cellSize;
+let input;
+let img;
 
 function preload() {
   for (let i = 0; i < 5; i++) {
@@ -21,6 +23,9 @@ function setup() {
   }
   noStroke();
 }
+
+input = createFileInput(handleImage);
+  input.position(50, 900);
 
 function draw() {
   background(255);
@@ -61,5 +66,14 @@ function keyPressed() {
   }
   if (key === 's' || key === 'S') {
     saveCanvas('amalgam_capture', 'png');
+  }
+}
+
+function handleImage(file) {
+  if (file.type === 'image') {
+    img = createImg(file.data, '');
+    img.hide();
+  } else {
+    img = null;
   }
 }

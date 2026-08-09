@@ -24,7 +24,7 @@ function setup() {
   noStroke();
 
   input = createFileInput(handleImage);
-  input.position(50, 900);
+  input.position(30, 820);
 }
 
 

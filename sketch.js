@@ -11,6 +11,9 @@ function preload() {
 
 function setup() {
   createCanvas(800, 800);
+
+input = createFileInput(handleImage);
+  input.position(850, 50);
   
   // calculate cellSize once
   cellSize = width / numCols;
@@ -72,5 +75,14 @@ function keyPressed() {
   
   if (key === 's' || key === 'S') {
     saveCanvas('amalgam_capture', 'png');
+  }
+}
+
+function handleImage(file) {
+  if (file.type === 'image') {
+    img = createImg(file.data, '');
+    img.hide();
+  } else {
+    img = null;
   }
 }

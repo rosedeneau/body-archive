@@ -12,6 +12,7 @@ function preload() {
   }
 }
 
+// draw grid and image input
 function setup() {
   createCanvas(800, 800);
   cellSize = width / numCols;
@@ -27,8 +28,7 @@ function setup() {
   input.position(30, 820);
 }
 
-
-
+// columns and rows
 function draw() {
   background(255);
   if (images.length === 5) {
@@ -50,6 +50,7 @@ function draw() {
   }
 }
 
+// go to next image in series
 function mousePressed() {
   let col = floor(mouseX / cellSize);
   let row = floor(mouseY / cellSize);
@@ -58,6 +59,7 @@ function mousePressed() {
   }
 }
 
+// reset
 function keyPressed() {
   if (key === 'r' || key === 'R') {
     for (let i = 0; i < numCols; i++) {
@@ -66,11 +68,14 @@ function keyPressed() {
       }
     }
   }
+
+  // download
   if (key === 's' || key === 'S') {
     saveCanvas('amalgam_capture', 'png');
   }
 }
 
+// image handler
 function handleImage(file) {
   if (file.type === 'image') {
     img = createImg(file.data, '');

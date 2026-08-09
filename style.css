@@ -5,3 +5,9 @@ html, body {
 canvas {
   display: block;
 }
+
+div.text {
+  position: sticky;
+  top: 0; left: 900;
+  border: 2px solid #4CAF50;
+}

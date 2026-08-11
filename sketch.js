@@ -29,9 +29,7 @@ function setup() {
   let div = createDiv();
   div.position(10,20);
   div.size(80, 60);
-  div.id('container');
-  let p = createP('p5.js')
-  p.parent('container');  
+  div.id('container'); 
 }
 
 // columns and rows

@@ -4,6 +4,7 @@ html, body {
 }
 canvas {
   display: block;
+  padding: 50;
 }
 
 div.text {

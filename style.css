@@ -1,14 +1,14 @@
 html, body {
   margin: 0;
-  padding: 0;
+  padding: 150;
 }
 canvas {
   display: block;
-  padding: 50;
+  padding: 150;
 }
 
 div.text {
   position: sticky;
   top: 0; left: 900;
-  border: 2px solid #4CAF50;
+  padding: 150;
 }

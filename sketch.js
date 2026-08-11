@@ -49,7 +49,6 @@ function draw() {
   }
 }
 
-// create parent
 let div = createDiv();
 div.position(10,20);
 div.size(80, 60);

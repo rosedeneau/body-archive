@@ -24,12 +24,7 @@ function setup() {
   noStroke();
 
   input = createFileInput(handleImage);
-  input.position(30, 1020);
-
-  let div = createDiv();
-  div.position(10,20);
-  div.size(80, 60);
-  div.id('container'); 
+  input.position(30, 900);
 }
 
 // columns and rows

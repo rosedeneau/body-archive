@@ -24,7 +24,7 @@ function setup() {
   noStroke();
 
   input = createFileInput(handleImage);
-  input.position(30, 820);
+  input.position(30, 1020);
 
   let div = createDiv();
   div.position(10,20);

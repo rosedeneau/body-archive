@@ -49,6 +49,14 @@ function draw() {
   }
 }
 
+// create parent
+let div = createDiv();
+div.position(10,20);
+div.size(80, 60);
+div.id('container');
+let p = createP('p5.js')
+p.parent('container');
+
 // go to next image in series
 function mousePressed() {
   let col = floor(mouseX / cellSize);

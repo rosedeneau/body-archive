@@ -8,13 +8,12 @@ canvas {
   margin: 0px;
 }
 
-.text {
-  position: sticky;
-  top: 0px; left: 100px;
-  padding: 0px;
-}
-
 .container {
   top: 50px; left: 100px;
   margin: 10px;
+}
+
+h1 {
+  padding: 20px;
+  font-size: 1rem;
 }

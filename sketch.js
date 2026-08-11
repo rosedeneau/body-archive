@@ -25,6 +25,13 @@ function setup() {
 
   input = createFileInput(handleImage);
   input.position(30, 820);
+
+  let div = createDiv();
+  div.position(10,20);
+  div.size(80, 60);
+  div.id('container');
+  let p = createP('p5.js')
+  p.parent('container');  
 }
 
 // columns and rows
@@ -48,13 +55,6 @@ function draw() {
     }
   }
 }
-
-let div = createDiv();
-div.position(10,20);
-div.size(80, 60);
-div.id('container');
-let p = createP('p5.js')
-p.parent('container');
 
 // go to next image in series
 function mousePressed() {
